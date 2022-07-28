@@ -1,0 +1,16 @@
+
+
+echo "Atualizando o servidor..."
+
+apt-get update
+apt-get upgrade -y
+apt-get install apache2 -y
+apt-get install unzipe -y
+
+echo "Baixando e copiando os arquivos da aplicação..." 
+
+cd /temp
+wget https://github.com/denilsonbonatti/linux-site-dio/arquivo/refs/heads/main.zip
+unzipe main.zip
+cd linux-site-dio-main
+cp -R * /var/www/html/
